@@ -1,6 +1,7 @@
 import React from "react";
-import Option from "../../components/LotteryOption"
-import LotteryInfo from "../../components/LotteryInfo"
+
+import Option from "../../components/LotteryOption";
+import LotteryInfo from "../../components/LotteryInfo";
 
 import "./styles.css";
 
@@ -14,41 +15,42 @@ const Presentation = ({
 	selectedSenaOptions,
 	selectedQuinaOptions,
 	calculatePrice,
-	quinaOptions
+	quinaOptions,
+	senaOptionIsSelected,
+	quinaOptionIsSelected
 }) => {
 	return (
 		<div className="container">
 			<div className="titleWrpper">
-				<p>uMov.me Loterias</p>
+				<p className="title">uMov.me Loterias</p>
 			</div>
 			<div className="optionsButtonsWrapper">
-				<button onClick={() => setCurrentTab("sena")}>Sena</button>
-				<button onClick={() => setCurrentTab("quina")}>Quina</button>
+				<button className="optionButton" onClick={() => setCurrentTab("sena")}>Sena</button>
+				<button className="optionButton" onClick={() => setCurrentTab("quina")}>Quina</button>
 			</div>
-			{currentTab === "sena" ? (
-				<>
-					<div className="loteryWrapper">
-						{
+			<div>
+				<div className="optionsWrapper">
+					<div className="options">
+						{currentTab === "sena" ? (
 							senaOptions.map((option, i) => (
-								<Option key={i} option={option} selectOption={selectSenaOption} type="sena"/>
+								<Option key={i} option={option} selectOption={selectSenaOption} isSelected={senaOptionIsSelected} type="sena"/>
 							))
-						}
-					</div>
-					<LotteryInfo options={selectedSenaOptions} optionsToRender={formatedSenaOptions} price={calculatePrice} type="sena"/>
-				</>
-			) : (
-				<>
-					<div className="loteryWrapper">
-						{
+						) : (
 							quinaOptions.map((option, i) => (
-								<Option key={i} option={option} selectOption={selectSenaOption} type="quina"/>
+								<Option key={i} option={option} selectOption={selectSenaOption} isSelected={quinaOptionIsSelected} type="quina"/>
 							))
+						)
 						}
 					</div>
-					<LotteryInfo options={selectedQuinaOptions} optionsToRender={formatedQuinaOptions} price={calculatePrice} type="quina"/>
-				</>
-			)}
+				</div>
+				{currentTab === "sena" ? (
+						<LotteryInfo options={selectedSenaOptions} optionsToRender={formatedSenaOptions} price={calculatePrice} type="sena"/>
+					) : (
+						<LotteryInfo options={selectedQuinaOptions} optionsToRender={formatedQuinaOptions} price={calculatePrice} type="quina"/>
+					)
+				}
 			</div>
+		</div>
 	)
 }
 

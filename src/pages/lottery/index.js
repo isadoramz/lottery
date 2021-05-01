@@ -1,41 +1,38 @@
 import React, { useEffect, useContext } from "react";
 import Presentation from "./presentation";
-import { LotteryContext } from "../../contexts/LotteryContext"
-import LotteryProvider from "../../contexts/LotteryContext"
+import { LotteryContext } from "../../contexts/LotteryContext";
 
 const Lottery = () => {
-	const { currentTab, setCurrentTab, gamePrice, setGamePrice } = useContext(LotteryContext);
-
+	const { currentTab, setCurrentTab, setGamePrice } = useContext(LotteryContext);
 	const [senaOptions, setSenaOptions] = React.useState([]);
 	const [quinaOptions, setQuinaOptions] = React.useState([]);
-
 	const [selectedSenaOptions, setSelectedSenaOptions] = React.useState([]);
 	const [selectedQuinaOptions, setSelectedQuinaOptions] = React.useState([]);
 	const senaTax = [
-		{ options: 6, value: 4.5 },
-		{ options: 7, value: 31.5 },
-		{ options: 8, value: 126 },
-		{ options: 9, value: 378 },
-		{ options: 10, value: 945},
-		{ options: 11, value: 2079 },
-		{ options: 12, value: 4158 },
-		{ options: 13, value: 7722 },
-		{ options: 14, value: 13513.50},
-		{ options: 15, value: 22522.50 }
+		{ options: 6, value: "4,50" },
+		{ options: 7, value: "31.50"},
+		{ options: 8, value: "126,00" },
+		{ options: 9, value: "378,00" },
+		{ options: 10, value: "945,00"},
+		{ options: 11, value: "2079,00"},
+		{ options: 12, value: "4158,00" },
+		{ options: 13, value: "7722,00" },
+		{ options: 14, value: "13513,50"},
+		{ options: 15, value: "22522,50" }
 	];
 	const quinaTax = [
-		{ options: 5, value: 2 },
-		{ options: 6, value: 12 },
-		{ options: 7, value: 42 },
-		{ options: 8, value: 112 },
-		{ options: 9, value: 252 },
-		{ options: 10, value: 504} ,
-		{ options: 11, value: 924 },
-		{ options: 12, value: 1584 },
-		{ options: 13, value: 2574 },
-		{ options: 14, value: 4004 },
-		{ options: 15, value: 6006 }
-	]
+		{ options: 5, value: "2,00" },
+		{ options: 6, value: "12,00"},
+		{ options: 7, value: "42,00" },
+		{ options: 8, value: "112,00" },
+		{ options: 9, value: "252,00" },
+		{ options: 10, value: "504,00" } ,
+		{ options: 11, value: "924,00" },
+		{ options: 12, value: "1584,00" },
+		{ options: 13, value: "2574,00" },
+		{ options: 14, value: "4004,00" },
+		{ options: 15, value: "6006,00" }
+	];
 	
 	useEffect(() => {
 		const numbers = []
@@ -73,7 +70,6 @@ const Lottery = () => {
 				setSelectedQuinaOptions([...selectedQuinaOptions, number])
 			}
 		}
-		
 	}
 
 	const formatNumber = (number) => {
@@ -81,8 +77,8 @@ const Lottery = () => {
 		return number;
 	}
 
-	let formatedSenaOptions = selectedSenaOptions?.map((option) => formatNumber(option)).sort().join("-");
-	let formatedQuinaOptions = selectedQuinaOptions?.map((option) => formatNumber(option)).sort().join("-");
+	let formatedSenaOptions = selectedSenaOptions?.map((option) => formatNumber(option)).sort().join(" - ");
+	let formatedQuinaOptions = selectedQuinaOptions?.map((option) => formatNumber(option)).sort().join(" - ");
 
 	const senaOptionIsSelected = (number) => {
 		return selectedSenaOptions.filter((option) => option === number).length > 0
@@ -124,6 +120,8 @@ const Lottery = () => {
 				selectedQuinaOptions={selectedQuinaOptions}
 				calculatePrice={calculatePrice}
 				quinaOptions={quinaOptions}
+				senaOptionIsSelected={senaOptionIsSelected}
+				quinaOptionIsSelected={quinaOptionIsSelected}
 			/>	
 	)
 }
