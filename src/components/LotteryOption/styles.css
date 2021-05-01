@@ -10,4 +10,20 @@
     border-radius: 50%;
     border: none;
     color: #474747;
+    border: 1px solid #00a7b1;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.optionSelected {
+    width: 35px;
+    height: 35px;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    border: 1px solid #00a7b1;
+    font-size: 15px;
+    font-weight: 500;
+    background-color: #00a7b1;
 }

@@ -1,13 +1,40 @@
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     padding: 30px 300px;
+    text-align: center;
 }
 
-.loteryWrapper {
+.title {
+	color: #00a7b1;
+	font-size: 40px;
+	font-weight: 600;
+}
+
+.optionsButtonsWrapper {
+	margin-bottom: 40px;
+}
+
+.optionButton {
+	background-color: rgb(169, 28, 194);
+	width: 100px;
+	height: 40px;
+	border-radius: 23px;
+	border: none;
+	color: white;
+	margin: 0 10px;
+	font-size: 15px;
+}
+
+.optionsWrapper {
+    display: flex;
+    justify-content: center;
+		margin-bottom: 40px;
+}
+
+.options {
     display: flex;
     flex-wrap: wrap;
     width: 500px;
     height: 100%;
-}
+ }
