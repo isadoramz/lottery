@@ -13,6 +13,7 @@
     border: 1px solid #00a7b1;
     font-size: 15px;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .optionSelected {
@@ -26,4 +27,5 @@
     font-size: 15px;
     font-weight: 500;
     background-color: #00a7b1;
+    cursor: pointer;
 }
