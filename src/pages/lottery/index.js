@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Presentation from "./presentation";
 
-const Sena = () => {
+const Lottery = () => {
 	const [isSenaOptionSelected, setIsSenaOptionSelected] = React.useState(true);
 	const [senaOptions, setSenaOptions] = React.useState([]);
 	const [quinaOptions, setQuinaOptions] = React.useState([]);
@@ -119,4 +119,4 @@ const Sena = () => {
 	)
 }
 
-export default Sena;
+export default Lottery;
