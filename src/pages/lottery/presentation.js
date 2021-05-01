@@ -3,7 +3,7 @@ import React from "react";
 import Option from "../../components/LotteryOption";
 import LotteryInfo from "../../components/LotteryInfo";
 
-import "./styles.css";
+import "../styles.css";
 
 const Presentation = ({
 	currentTab,
