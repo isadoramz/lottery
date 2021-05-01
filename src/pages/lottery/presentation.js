@@ -33,11 +33,11 @@ const Presentation = ({
 					<div className="options">
 						{currentTab === "sena" ? (
 							senaOptions.map((option, i) => (
-								<Option key={i} option={option} selectOption={selectSenaOption} isSelected={senaOptionIsSelected} type="sena"/>
+								<Option index={i} option={option} selectOption={selectSenaOption} isSelected={senaOptionIsSelected} type="sena"/>
 							))
 						) : (
 							quinaOptions.map((option, i) => (
-								<Option key={i} option={option} selectOption={selectSenaOption} isSelected={quinaOptionIsSelected} type="quina"/>
+								<Option index={i} option={option} selectOption={selectSenaOption} isSelected={quinaOptionIsSelected} type="quina"/>
 							))
 						)
 						}
