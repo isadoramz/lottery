@@ -1,4 +1,4 @@
-import LotteryProvider from './contexts/LotteryContext';
+import LotteryProvider from './contexts/loterry';
 import Routes from "./routes"
 
 function App() {
