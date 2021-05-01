@@ -1,9 +1,8 @@
 import React from 'react';
-import { Router } from "react-router-dom";
 import LotteryProvider from '../../contexts/loterry/index';
 import LotteryOption from "./index"
 
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 const Component = ({  key, selectOption, option, type, isSelected }) => {
     
