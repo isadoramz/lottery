@@ -5,8 +5,8 @@ import LotteryInfo from "../../components/LotteryInfo"
 import "./styles.css";
 
 const Presentation = ({
-	isSenaOptionSelected,
-	setIsSenaOptionSelected,
+	currentTab,
+	setCurrentTab,
 	senaOptions,
 	selectSenaOption,
 	formatedSenaOptions,
@@ -22,10 +22,10 @@ const Presentation = ({
 				<p>uMov.me Loterias</p>
 			</div>
 			<div className="optionsButtonsWrapper">
-				<button onClick={() => setIsSenaOptionSelected(true)}>Sena</button>
-				<button onClick={() => setIsSenaOptionSelected(false)}>Quina</button>
+				<button onClick={() => setCurrentTab("sena")}>Sena</button>
+				<button onClick={() => setCurrentTab("quina")}>Quina</button>
 			</div>
-			{isSenaOptionSelected ? (
+			{currentTab === "sena" ? (
 				<>
 					<div className="loteryWrapper">
 						{

@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import Presentation from "./presentation";
+import { LotteryContext } from "../../contexts/LotteryContext"
+import LotteryProvider from "../../contexts/LotteryContext"
 
 const Lottery = () => {
-	const [isSenaOptionSelected, setIsSenaOptionSelected] = React.useState(true);
+	const { currentTab, setCurrentTab, gamePrice, setGamePrice } = useContext(LotteryContext);
+
 	const [senaOptions, setSenaOptions] = React.useState([]);
 	const [quinaOptions, setQuinaOptions] = React.useState([]);
 
@@ -49,6 +52,12 @@ const Lottery = () => {
 		}
 		setQuinaOptions(numbers)
 	}, [setQuinaOptions])
+
+	useEffect(() => {
+		setGamePrice(null);
+		setSelectedQuinaOptions([]);
+		setSelectedSenaOptions([]);
+	}, [currentTab, setGamePrice])
 
 	const selectSenaOption = (number, type) => {
 		if(type === "sena") {
@@ -104,18 +113,18 @@ const Lottery = () => {
 	}
 
 	return (
-		<Presentation
-			isSenaOptionSelected={isSenaOptionSelected}
-			setIsSenaOptionSelected={setIsSenaOptionSelected}
-			senaOptions={senaOptions}
-			selectSenaOption={selectSenaOption}
-			formatedSenaOptions={formatedSenaOptions}
-			formatedQuinaOptions={formatedQuinaOptions}
-			selectedSenaOptions={selectedSenaOptions}
-			selectedQuinaOptions={selectedQuinaOptions}
-			calculatePrice={calculatePrice}
-			quinaOptions={quinaOptions}
-		/>
+			<Presentation
+				currentTab={currentTab}
+				setCurrentTab={setCurrentTab}
+				senaOptions={senaOptions}
+				selectSenaOption={selectSenaOption}
+				formatedSenaOptions={formatedSenaOptions}
+				formatedQuinaOptions={formatedQuinaOptions}
+				selectedSenaOptions={selectedSenaOptions}
+				selectedQuinaOptions={selectedQuinaOptions}
+				calculatePrice={calculatePrice}
+				quinaOptions={quinaOptions}
+			/>	
 	)
 }
 

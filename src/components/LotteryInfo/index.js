@@ -1,6 +1,10 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { LotteryContext } from "../../contexts/LotteryContext.js"
 
 const OptionText = ({ options, optionsToRender, price, type}) => {
+    const { setGamePrice, gamePrice } = useContext(LotteryContext);
+
     if(options.length === 0) {
         return <p>Você ainda nao marcou nenhuma dezena</p>
     } else if(options.length === 1) {
@@ -12,7 +16,7 @@ const OptionText = ({ options, optionsToRender, price, type}) => {
                     <>
                         <p>Você selecionou as dezenas: {optionsToRender}</p>
                         <p>valor jogo: {price(options, "sena")} reais</p>
-                        <button><Link to="/pagamento">Confirmar Jogo</Link></button>
+                        <button onClick={() => setGamePrice(price(options, "sena"))}><Link to="/pagamento">Confirmar Jogo</Link></button>
                     </>
                 )
             }
@@ -22,7 +26,7 @@ const OptionText = ({ options, optionsToRender, price, type}) => {
                     <>
                         <p>Você selecionou as dezenas: {optionsToRender}</p>
                         <p>valor jogo: {price(options, "quina")} reais</p>
-                        <button><Link to="/pagamento">Confirmar Jogo</Link></button>
+                        <button onClick={() => setGamePrice(price(options, "quina"))}><Link to="/pagamento">Confirmar Jogo</Link></button>
                     </>
                 )
             }
