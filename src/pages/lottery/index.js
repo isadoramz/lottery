@@ -1,6 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import Presentation from "./presentation";
-import { LotteryContext } from "../../contexts/LotteryContext";
+import { LotteryContext } from "../../contexts/loterry";
 
 const Lottery = () => {
 	const { currentTab, setCurrentTab, setGamePrice } = useContext(LotteryContext);

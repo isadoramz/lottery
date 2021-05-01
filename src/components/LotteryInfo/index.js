@@ -1,5 +1,5 @@
-import { useContext } from "react";
-import { LotteryContext } from "../../contexts/LotteryContext.js";
+import { useContext } from "react"; 
+import { LotteryContext } from "../../contexts/loterry/index.js";
 import { useHistory } from "react-router-dom"
 
 import "./styles.css"
