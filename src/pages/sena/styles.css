@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 300px;
+}
+
+.loteryWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 100%;
+}

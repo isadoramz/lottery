@@ -1,0 +1,13 @@
+.optionWrapper {
+    width: 20px;
+    margin: 5px 15px;
+}
+
+.option {
+    width: 35px;
+    height: 35px;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    color: #474747;
+}
