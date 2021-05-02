@@ -17,7 +17,8 @@ const OptionText = ({ options, optionsToRender, price, type}) => {
 		if(options.length >= 1 && options.length < 6) {
 			return (
 				<>
-				<p className="text">Você selecionou a(s) dezena(s):</p><p className="text">{optionsToRender}</p>
+				<p className="text">Você selecionou a(s) dezena(s):</p>
+				<p className="text">{optionsToRender}</p>
 				</>
 			)
 		} 
@@ -25,7 +26,7 @@ const OptionText = ({ options, optionsToRender, price, type}) => {
 			return (
 				<>
 					<p className="text">Você selecionou a(s) dezena(s):</p>
-					<p>{optionsToRender}</p>
+					<p className="text">{optionsToRender}</p>
 					<div className="textWrapper">
 						<p className="text">Valor do jogo: R$</p><p className="text">{price(options, "sena")}</p>
 						<button tyoe="button" className="button" onClick={() => {setGamePrice(price(options, "sena"), history.push("/pagamento"))}}>Confirmar jogo</button>
