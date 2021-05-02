@@ -25,7 +25,7 @@ const Presentation = ({
 				<p className="title">uMov.me Loterias</p>
 			</div>
 			<div className="optionsButtonsWrapper">
-					<button className={currentTab === "sena" ? ("optionButtonSelected") : ("optionButton")} onClick={() => setCurrentTab("sena")}>Sena</button>
+				<button className={currentTab === "sena" ? ("optionButtonSelected") : ("optionButton")} onClick={() => setCurrentTab("sena")}>Sena</button>
 				<button className={currentTab === "quina" ? ("optionButtonSelected") : ("optionButton")} onClick={() => setCurrentTab("quina")}>Quina</button>
 			</div>
 			<div>
