@@ -15,14 +15,19 @@ const OptionText = ({ options, optionsToRender, price, type}) => {
 	
 	if(type === "sena") {
 		if(options.length >= 1 && options.length < 6) {
-			return <p className="text">Você selecionou a(s) dezena(s): {optionsToRender}</p>
+			return (
+				<>
+				<p className="text">Você selecionou a(s) dezena(s):</p><p className="text">{optionsToRender}</p>
+				</>
+			)
 		} 
 		if(options.length >= 6) {
 			return (
 				<>
-					<p className="text">Você selecionou a(s) dezena(s): {optionsToRender}</p>
+					<p className="text">Você selecionou a(s) dezena(s):</p>
+					<p>{optionsToRender}</p>
 					<div className="textWrapper">
-						<p className="text">Valor do jogo: R${price(options, "sena")}</p>
+						<p className="text">Valor do jogo: R$</p><p className="text">{price(options, "sena")}</p>
 						<button tyoe="button" className="button" onClick={() => {setGamePrice(price(options, "sena"), history.push("/pagamento"))}}>Confirmar jogo</button>
 					</div>
 				</>
@@ -30,14 +35,20 @@ const OptionText = ({ options, optionsToRender, price, type}) => {
 		} 
 	} else if(type === "quina") {
 			if(options.length >= 1 && options.length < 5) {
-				return <p className="text">Você selecionou a(s) dezena(s): {optionsToRender}</p>
+				return (
+					<>
+						<p className="text">Você selecionou a(s) dezena(s):</p>
+						<p className="text">{optionsToRender}</p>
+					</>
+				)
 			}
 			if(options.length >= 5) {
 				return (
 					<>
-						<p className="text">Você selecionou a(s) dezena(s): {optionsToRender}</p>
+						<p className="text">Você selecionou a(s) dezena(s):</p>
+						<p className="text">{optionsToRender}</p>
 						<div className="textWrapper">
-							<p className="text">Valor do jogo: R${price(options, "quina")}</p>
+							<p className="text">Valor do jogo: R$</p><p className="text">{price(options, "quina")}</p>
 							<button tyoe="button" className="button" onClick={() => {setGamePrice(price(options, "quina"), history.push("/pagamento"))}}>Confirmar jogo</button>
 						</div>
 					</>

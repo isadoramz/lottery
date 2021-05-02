@@ -10,7 +10,7 @@ const Lottery = () => {
 	const [selectedQuinaOptions, setSelectedQuinaOptions] = React.useState([]);
 	const senaTax = [
 		{ options: 6, value: "4,50" },
-		{ options: 7, value: "31.50"},
+		{ options: 7, value: "31,50"},
 		{ options: 8, value: "126,00" },
 		{ options: 9, value: "378,00" },
 		{ options: 10, value: "945,00"},
